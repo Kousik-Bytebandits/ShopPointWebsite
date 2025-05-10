@@ -37,18 +37,18 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative ">
       
       {!isOpen && window.innerWidth < 760 && (
         <button
           className="text-white p-2 absolute  left-2 z-50 py-9 rounded "
           onClick={() => setIsOpen(true)}
         >
-          <FaBars className="text-2xl text-blue-500 -mt-20 "/>
+          <FaBars className="text-2xl text-blue-500 -mt-4 "/>
         </button>
       )}
 
-      {/* Overlay for mobile close on outside click */}
+     
       {isOpen && window.innerWidth < 760 && (
         <div className="fixed inset-0 z-30 bg-black bg-opacity-50"></div>
       )}
@@ -56,7 +56,7 @@ const Sidebar = () => {
       {/* Sidebar */}
       <div
         ref={sidebarRef}
-        className={`fixed top-0 left-0 h-full w-[75%] bg-[#031123] text-white transition-transform duration-300 z-40 font-archivo ${
+        className={`fixed top-0 left-0 h-full w-[75%] md:w-[20%]  bg-[#031123] text-white transition-transform duration-300 z-40 font-archivo ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -80,15 +80,16 @@ const Sidebar = () => {
               {dashboardOpen ? <FaChevronUp /> : <FaChevronDown />}
             </button>
             {dashboardOpen && (
-              <ul className="ml-6 mt-2 space-y-2 text-[16px]">
+              <ul className="ml-6 mt-2 space-y-2 text-[17px]">
                 <li>
                   <Link
-                    to="/analytics"
-                    className="block px-2 py-1 rounded hover:bg-[#1c2d4e]"
+                    to="/"
+                    className="block px-8 py-5 rounded hover:bg-[#1c2d4e] font-bold"
                   >
                     Sales Analytics
                   </Link>
                 </li>
+               
                 
                 
               </ul>
