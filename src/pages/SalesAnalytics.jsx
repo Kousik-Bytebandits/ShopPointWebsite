@@ -80,18 +80,18 @@ const SalesAnalytics = () => {
         <div className="rounded-xl  w-[100%] h-[150px] md:h-[100px] bg-[#031123] md:flex  ">
         <h2 className="text-[30px] font-bold  mt-4 md:text-left md:w-[60%] md:ml-10 md:mt-5 md:text-[38px]">Sales Analytics</h2>
         <div className="flex items-center ">
-          <p className="hidden md:inline w-[250px] ">Data Refresh</p>
-          <FaSync className="hidden md:inline text-gray-400 cursor-pointer md:text-2xl " title="Sync" />
-          <span className="text-sm text-gray-300 border  mt-5 md:mt-0 w-[100%]  ml-5 mr-5  py-3 rounded-md bg-[#00193b]  border-[#29396f]">{currentDate}</span>
+          <p className="hidden md:inline w-[200px] ml-14 font-bold">Data Refresh</p>
+          <FaSync className="hidden md:inline text-blue-500 cursor-pointer md:text-3xl " title="Sync" />
+          <span className="text-sm text-gray-300 border  mt-5 md:mt-0 w-[100%]  ml-5 mr-5  py-3 rounded-md bg-[#00193b]  border-[#29396f] font-bold">{currentDate}</span>
         </div>
         </div>
       </section>
 
       <section className="flex flex-col md:flex-row gap-6 mb-10">
-  {/* Left Box */}
+
   <div className="bg-[#031123] rounded-xl shadow-md flex-[0.7] p-4">
     <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:justify-start gap-6">
-      {/* Logo Box */}
+     
       <div className="h-[220px] md:h-[250px] md:w-[22%] w-full border rounded-md bg-[#00193b] border-[#29396f] text-center flex flex-col justify-center items-center">
         <img src="./shoplogo.png" alt="logo" className="w-30 h-20 mb-5" />
         <span className="text-[1.25rem] font-bold">ShopPoint</span>

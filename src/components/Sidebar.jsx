@@ -1,16 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
-  FaBars,
   FaChevronDown,
-  FaChevronUp,
+  FaChevronRight,
   FaInbox,
-  
+  FaBoxes, // Icon for Products
 } from "react-icons/fa";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(window.innerWidth >= 760);
   const [dashboardOpen, setDashboardOpen] = useState(true);
+  const [productsOpen, setProductsOpen] = useState(true); // <-- NEW STATE
   const sidebarRef = useRef();
 
   useEffect(() => {
@@ -21,7 +21,6 @@ const Sidebar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (
@@ -37,18 +36,15 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className="relative ">
-      
+    <div className="relative">
+      {/* Overlay button on mobile */}
       {!isOpen && window.innerWidth < 760 && (
         <button
-          className="text-white p-2 absolute  left-2 z-50 py-9 rounded "
+          className="text-white p-2 absolute left-2 z-50 py-9 rounded"
           onClick={() => setIsOpen(true)}
-        >
-          <FaBars className="text-2xl text-blue-500 -mt-4 "/>
-        </button>
+        ></button>
       )}
 
-     
       {isOpen && window.innerWidth < 760 && (
         <div className="fixed inset-0 z-30 bg-black bg-opacity-50"></div>
       )}
@@ -56,42 +52,74 @@ const Sidebar = () => {
       {/* Sidebar */}
       <div
         ref={sidebarRef}
-        className={`fixed top-0 left-0 h-full w-[75%] md:w-[20%]  bg-[#031123] text-white transition-transform duration-300 z-40 font-archivo ${
+        className={`fixed top-0 left-0 h-full w-[75%] md:w-[20%] bg-[#031123] text-white transition-transform duration-300 z-40 font-archivo ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Logo */}
         <div className="p-4 text-[#d8e9ff] text-2xl font-bold flex items-center gap-2 border-b border-[#1e2b4a]">
-        <img src="shoplogo.png" className="w-12 "></img>
+          <img src="shoplogo.png" className="w-12" alt="logo" />
           ShopPoint
         </div>
 
-        {/* Dashboard Section */}
+        {/* Sidebar Sections */}
         <ul className="p-4 space-y-3 text-sm">
+          {/* Dashboard Section */}
           <li>
             <button
               onClick={() => setDashboardOpen(!dashboardOpen)}
-              className="flex justify-between items-center w-full bg-[#00193b] px-4 py-3  border border-[#29396f] rounded text-white hover:bg-[#122d5c]"
+              className="flex justify-between items-center w-full bg-[#00193b] px-4 py-3 border border-[#29396f] rounded text-white hover:bg-[#122d5c]"
             >
               <span className="flex items-center gap-2 text-[18px] font-bold">
                 <FaInbox />
-              Dashboard
+                Dashboard
               </span>
-              {dashboardOpen ? <FaChevronUp /> : <FaChevronDown />}
+              {dashboardOpen ? <FaChevronDown /> : <FaChevronRight />}
             </button>
             {dashboardOpen && (
-              <ul className="ml-6 mt-2 space-y-2 text-[17px]">
+              <ul className="ml-6 mt-2 space-y-2 text-[17px] list-disc px-8">
                 <li>
                   <Link
                     to="/"
-                    className="block px-8 py-5 rounded hover:bg-[#1c2d4e] font-bold"
+                    className="block  py-2 rounded hover:bg-[#1c2d4e] font-bold"
                   >
                     Sales Analytics
                   </Link>
                 </li>
-               
-                
-                
+              </ul>
+            )}
+          </li>
+
+          {/* Products Section */}
+          <li>
+            <button
+              onClick={() => setProductsOpen(!productsOpen)}
+              className="flex justify-between items-center w-full bg-[#00193b] px-4 py-3 border border-[#29396f] rounded text-white hover:bg-[#122d5c]"
+            >
+              <span className="flex items-center gap-2 text-[18px] font-bold">
+                <FaBoxes />
+                Products
+              </span>
+              {productsOpen ? <FaChevronDown /> : <FaChevronRight />}
+            </button>
+            {productsOpen && (
+              <ul className=" mt-2 space-y-2 text-[17px] font-bold list-disc px-8 ml-6">
+                <li>
+                  <Link
+                    to="/products-grid"
+                    className="block py-2 rounded hover:bg-[#1c2d4e]"
+                  >
+                    Products Grid
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/product-editor"
+                    className="block  py-2 rounded hover:bg-[#1c2d4e]"
+                  >
+                    Product Editor
+                  </Link>
+                </li>
               </ul>
             )}
           </li>
