@@ -35,7 +35,7 @@ const ProductEditor = () => {
           <h2 className="text-[30px] font-bold mt-4 md:text-left md:w-[60%] md:ml-10 md:mt-5 md:text-[38px]">Product Editor</h2>
           <div className="flex items-center">
             <p className="hidden md:inline w-[200px] ml-14 font-bold">Data Refresh</p>
-            <FaSync className="hidden md:inline text-blue-400 cursor-pointer md:text-3xl" title="Sync" />
+            <FaSync className="hidden md:inline text-blue-500 cursor-pointer md:text-3xl" title="Sync" />
             <span className="text-sm   border border-[#375683] mt-5 md:mt-0 w-[100%] ml-5 mr-5 py-3 rounded-md bg-[#00193b]  font-bold">{currentDate}</span>
           </div>
         </div>

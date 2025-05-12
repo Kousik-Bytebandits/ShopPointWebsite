@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaEdit, FaTrash, FaTv } from "react-icons/fa";
+import { FaEdit,FaSync, FaTrash, FaTv } from "react-icons/fa";
 
 
 const products = [
@@ -24,15 +24,22 @@ const ProductGrid = () => {
 
   useEffect(() => {
     const updateDate = () => {
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString("en-GB"); 
-      const formattedTime = now.toLocaleTimeString("en-GB", {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false,
-      });
-      setCurrentDate(`${formattedDate.replace(/\//g, ".")} ${formattedTime} PM`);
-    };
+        const now = new Date();
+        const formattedDate = now.toLocaleDateString("en-US", {
+          month: "long",
+          day: "2-digit",
+          year: "numeric",
+        });
+  
+        const formattedTime = now.toLocaleTimeString("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false,
+        });
+  
+        setCurrentDate(`${formattedDate} ${formattedTime} PM`);
+      };
+  
 
     updateDate();
     const interval = setInterval(updateDate, 60000);
@@ -43,12 +50,16 @@ const ProductGrid = () => {
     <div   >
     <main className="p-4 text-[#d8e9ff] bg-[#001c41] min-h-screen font-archivo ">
       {/* Title and Date */}
-      <section className="text-center mb-6 ">
-        <div className="bg-[#031123] rounded-lg p-4">
-          <h2 className="text-2xl font-bold mb-2">Products Grid</h2>
-          <p className="text-sm border rounded-md py-2 bg-[#00193b] border-[#29396f] font-semibold">{currentDate}</p>
-        </div>
-      </section>
+    <section className="flex flex-col justify-center md:justify-between items-center text-center mb-4">
+            <div className="rounded w-[100%] h-[150px] md:h-[100px] bg-[#031123] md:flex">
+              <h2 className="text-[30px] font-bold mt-4 md:text-left md:w-[60%] md:ml-10 md:mt-5 md:text-[38px]">Products Grid</h2>
+              <div className="flex items-center">
+                <p className="hidden md:inline w-[200px] ml-14 font-bold">Data Refresh</p>
+                <FaSync className="hidden md:inline text-blue-500 cursor-pointer md:text-3xl" title="Sync" />
+                <span className="text-sm   border border-[#375683] mt-5 md:mt-0 w-[100%] ml-5 mr-5 py-3 rounded-md bg-[#00193b]  font-bold">{currentDate}</span>
+              </div>
+            </div>
+          </section>
 
       {/* Category Header */}
       <div className="bg-[#031123] p-5 mb-4 rounded-lg flex items-center gap-2">
@@ -93,7 +104,7 @@ const ProductGrid = () => {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-[100%] h-36 object-contain "
+                className="w-[100%] h-37 object-contain "
               />
              
             </div>
