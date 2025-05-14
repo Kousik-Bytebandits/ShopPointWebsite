@@ -4,13 +4,15 @@ import {
   FaChevronDown,
   FaChevronRight,
   FaInbox,
-  FaBoxes, // Icon for Products
+  FaBoxes,
+  FaClipboard,
+  FaShoppingCart, 
 } from "react-icons/fa";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(window.innerWidth >= 760);
   const [dashboardOpen, setDashboardOpen] = useState(true);
-  const [productsOpen, setProductsOpen] = useState(true); // <-- NEW STATE
+  const [productsOpen, setProductsOpen] = useState(true);
   const sidebarRef = useRef();
 
   useEffect(() => {
@@ -123,6 +125,24 @@ const Sidebar = () => {
               </ul>
             )}
           </li>
+          {/* Orders Section*/ }
+          <li>
+            <Link to='/orders'
+            className="flex justify-between items-center w-full bg-[#00193b] px-4 py-3 border border-[#29396f] rounded text-white hover:bg-[#122d5c]">
+            <span className="flex items-center gap-2 text-[18px] font-bold">
+                <FaShoppingCart />
+                 Orders</span>
+            </Link>
+            </li>
+             {/* Customers Section*/ }
+          <li>
+            <Link to='/customers'
+            className="flex justify-between items-center w-full bg-[#00193b] px-4 py-3 border border-[#29396f] rounded text-white hover:bg-[#122d5c]">
+            <span className="flex items-center gap-2 text-[18px] font-bold">
+                <FaClipboard />
+                 Customers</span>
+            </Link>
+            </li>
         </ul>
       </div>
     </div>

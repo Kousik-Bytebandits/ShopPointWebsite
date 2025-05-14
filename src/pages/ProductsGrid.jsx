@@ -8,7 +8,7 @@ const products = [
   { id: 3, name: "SteamDeck ", available: 369, sold: 22841, price: 499, salePrice: 449, image: "game.png" },
   { id: 4, name: "LCD CPU Cooler", available: 641, sold: 20053, price: 600, salePrice: 569, image: "ps5.png" },
   { id: 5, name: "Xbox Series X", available: 1006, sold: 19874, price: 599, salePrice: 579, image: "ps5.png" },
-  { id: 6, name: "iPhone 12 Pro ", available: 1152, sold: 10802, price: 1109, salePrice: 1099, image: "iphone11.png" },
+  { id: 6, name: "iPhone 12 Pro ", available: 1152, sold: 10802, price: 1109, salePrice: 1099, image: "iphone.png" },
   { id: 7, name: "Samsung  ", available: 995, sold: 10452, price: 499, salePrice: 449, image: "tv.png" },
   { id: 8, name: "Quadcopter ", available: 0, sold: 3471, price: 399, salePrice: 389, image: "game.png" },
   { id: 9, name: "AMD Ryzen 7 ", available: 102, sold: 1923, price: 300, salePrice: 289, image: "iphone.png" },

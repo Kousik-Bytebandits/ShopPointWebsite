@@ -7,4 +7,12 @@
   .scrollbar-hidden::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
   }
-  
+
+.recharts-pie path:focus {
+  outline: none !important;
+}
+select:focus,
+option:focus {
+  outline: none;
+  box-shadow: none;
+}
