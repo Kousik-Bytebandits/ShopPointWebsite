@@ -6,8 +6,10 @@ import {
   FaInbox,
   FaBoxes,
   FaClipboard,
-  FaShoppingCart, 
+  FaShoppingCart,
+   
 } from "react-icons/fa";
+import { FaMoneyCheckDollar, FaStarHalfStroke } from "react-icons/fa6";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(window.innerWidth >= 760);
@@ -141,6 +143,24 @@ const Sidebar = () => {
             <span className="flex items-center gap-2 text-[18px] font-bold">
                 <FaClipboard />
                  Customers</span>
+            </Link>
+            </li>
+                {/*Reviews Section*/ }
+          <li>
+            <Link to='/reviews'
+            className="flex justify-between items-center w-full bg-[#00193b] px-4 py-3 border border-[#29396f] rounded text-white hover:bg-[#122d5c]">
+            <span className="flex items-center gap-2 text-[18px] font-bold">
+                <FaStarHalfStroke />
+                 Reviews</span>
+            </Link>
+            </li>
+                 {/*Transactions Section*/ }
+          <li>
+            <Link to='/transactions'
+            className="flex justify-between items-center w-full bg-[#00193b] px-4 py-3 border border-[#29396f] rounded text-white hover:bg-[#122d5c]">
+            <span className="flex items-center gap-2 text-[18px] font-bold">
+                <FaMoneyCheckDollar />
+                 Transactions</span>
             </Link>
             </li>
         </ul>

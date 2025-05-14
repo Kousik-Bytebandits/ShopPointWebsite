@@ -7,6 +7,9 @@ import './App.css';
 import ProductEditor from './pages/ProductEditor';
 import Orders from './pages/Orders';
 import Customers from './pages/Customers';
+import Reviews from './pages/Reviews';
+import Transaction from './pages/Transactions';
+
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +28,8 @@ function App() {
              <Route path='/product-editor' element={<ProductEditor/>}/>
              <Route path='/orders' element={<Orders/>}/>
              <Route path='/customers' element={<Customers/>}/>
+             <Route path='/reviews' element={<Reviews/>}/>
+             <Route path='/transactions' element={<Transaction/>}/>
           </Routes>
         </div>
       </div>

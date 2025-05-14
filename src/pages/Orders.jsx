@@ -40,8 +40,8 @@ const orders = [
     sku: "154844US",
     category: "Accessories",
     payment: "$99",
-    status: "Completed",
-    rate: 4.0,
+    status: "Confirmed",
+    rate: 5,
   },
   {
     id: "#202587",
@@ -54,8 +54,22 @@ const orders = [
     sku: "202587DE",
     category: "Monitors",
     payment: "$699",
-    status: "Completed",
-    rate: 4.8,
+    status: "Refunded",
+    rate: 2.5,
+  },
+  {
+    id: "#202587",
+    product: {
+      name: "Dell Ultrasharp 27 Monitor",
+      regularPrice: "$750",
+      salePrice: "$699",
+      image: "tv.png",
+    },
+    sku: "202587DE",
+    category: "Monitors",
+    payment: "$1588",
+    status: "Cancelled",
+    rate: 0,
   },
 ];
 
@@ -87,6 +101,14 @@ function Orders() {
     const interval = setInterval(updateDate, 60000);
     return () => clearInterval(interval);
   }, []);
+
+  const statusColors = {
+  Completed: "bg-[#4f89fc]",
+  Confirmed: "bg-[#00ba9d]",
+  Refunded: "bg-[#aeaeae]",
+  Cancelled: "bg-[#ff5470]",
+};
+
   return (
     <div className="p-4  text-[#d8e9ff] bg-[#001c41]  font-archivo space-y-4 min-h-screen">
       <div className="  rounded-md space-y-4">
@@ -268,14 +290,18 @@ function Orders() {
             {order.payment} <span className="block text-sm font-normal">Fully paid</span>
           </div>
         </div>
-        <div className="grid grid-cols-2 border-b border-[#375683]">
-          <div className="border-r border-[#375683] py-5 px-3 font-semibold">Status</div>
-          <div className="p-5">
-            <span className="bg-green-600 px-4 py-2 rounded-full text-sm font-semibold">
-              {order.status}
-            </span>
-          </div>
-        </div>
+      <div className="grid grid-cols-2 border-b border-[#375683]">
+  <div className="border-r border-[#375683] py-5 px-3 font-semibold">Status</div>
+  <div className="p-5">
+    <span
+      className={`px-4 py-2 rounded-full text-sm font-semibold text-black uppercase ${
+        statusColors[order.status] || 'bg-gray-500'
+      }`}
+    >
+      {order.status}
+    </span>
+  </div>
+</div>
         <div className="grid grid-cols-2">
   <div className="border-r border-[#375683] p-4 font-semibold">Rate</div>
   <div className="p-3 flex items-center gap-1">
