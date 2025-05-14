@@ -5,7 +5,8 @@ import Navbar from './components/Navbar';
 import ProductsGrid from './pages/ProductsGrid';
 import './App.css';
 import ProductEditor from './pages/ProductEditor';
-
+import Orders from './pages/Orders';
+import Customers from './pages/Customers';
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +23,8 @@ function App() {
              <Route path="/" element={<SalesAnalytics />} />
              <Route path='/products-grid' element={<ProductsGrid/>}/>
              <Route path='/product-editor' element={<ProductEditor/>}/>
+             <Route path='/orders' element={<Orders/>}/>
+             <Route path='/customers' element={<Customers/>}/>
           </Routes>
         </div>
       </div>
