@@ -9,6 +9,8 @@ import Orders from './pages/Orders';
 import Customers from './pages/Customers';
 import Reviews from './pages/Reviews';
 import Transaction from './pages/Transactions';
+import ProductsManagement from './pages/ProductsManagement';
+import TopProducts from './pages/TopProducts';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
              <Route path='/customers' element={<Customers/>}/>
              <Route path='/reviews' element={<Reviews/>}/>
              <Route path='/transactions' element={<Transaction/>}/>
+             <Route path='/products-management' element={<ProductsManagement/>}/>
+             <Route path='/top-products'element={<TopProducts/>}/> 
           </Routes>
         </div>
       </div>

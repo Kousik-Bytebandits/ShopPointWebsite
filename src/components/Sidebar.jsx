@@ -108,6 +108,14 @@ const Sidebar = () => {
             </button>
             {productsOpen && (
               <ul className=" mt-2 space-y-2 text-[17px] font-bold list-disc px-8 ml-6">
+               <li>
+                  <Link
+                    to="/top-products"
+                    className="block  py-2 rounded hover:bg-[#1c2d4e]"
+                  >
+                   Top Products 
+                  </Link>
+                </li>
                 <li>
                   <Link
                     to="/products-grid"
@@ -122,6 +130,14 @@ const Sidebar = () => {
                     className="block  py-2 rounded hover:bg-[#1c2d4e]"
                   >
                     Product Editor
+                  </Link>
+                </li>
+                  <li>
+                  <Link
+                    to="/products-management"
+                    className="block  py-2 rounded hover:bg-[#1c2d4e]"
+                  >
+                    Products Management
                   </Link>
                 </li>
               </ul>
