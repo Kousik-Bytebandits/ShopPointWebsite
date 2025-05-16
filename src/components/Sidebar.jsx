@@ -13,8 +13,9 @@ import { FaMoneyCheckDollar, FaStarHalfStroke } from "react-icons/fa6";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(window.innerWidth >= 760);
-  const [dashboardOpen, setDashboardOpen] = useState(true);
-  const [productsOpen, setProductsOpen] = useState(true);
+  const [dashboardOpen, setDashboardOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const [pagesOpen,setPagesOpen] = useState(false);
   const sidebarRef = useRef();
 
   useEffect(() => {
@@ -88,6 +89,14 @@ const Sidebar = () => {
                     className="block  py-2 rounded hover:bg-[#1c2d4e] font-bold"
                   >
                     Sales Analytics
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/revenue"
+                    className="block  py-2 rounded hover:bg-[#1c2d4e] font-bold"
+                  >
+                    Revenue by Period
                   </Link>
                 </li>
               </ul>
@@ -179,6 +188,32 @@ const Sidebar = () => {
                  Transactions</span>
             </Link>
             </li>
+            {/*Login Section*/ }
+            <li>
+            <button
+              onClick={() => setPagesOpen(!pagesOpen)}
+              className="flex justify-between items-center w-full bg-[#00193b] px-4 py-3 border border-[#29396f] rounded text-white hover:bg-[#122d5c]"
+            >
+              <span className="flex items-center gap-2 text-[18px] font-bold">
+                <FaInbox />
+                Pages
+              </span>
+              {pagesOpen ? <FaChevronDown /> : <FaChevronRight />}
+            </button>
+            {pagesOpen && (
+              <ul className="ml-6 mt-2 space-y-2 text-[17px] list-disc px-8">
+                <li>
+                  <Link
+                    to="/login"
+                    className="block  py-2 rounded hover:bg-[#1c2d4e] font-bold"
+                  >
+                    Login
+                  </Link>
+                </li>
+               
+              </ul>
+            )}
+          </li>
         </ul>
       </div>
     </div>
