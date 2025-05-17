@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+
 import Sidebar from "./components/Sidebar";
 import SalesAnalytics from "./pages/SalesAnalytics";
 import Navbar from './components/Navbar';
