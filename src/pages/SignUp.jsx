@@ -1,7 +1,7 @@
 import  { useState } from "react";
 import { FaUser, FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
+import Bubbles from "../components/Bubbles";
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,27 +20,19 @@ const Signup = () => {
   return (
     <div className="min-h-screen w-full bg-white flex flex-col">
       {/* Top Section with Blue Background and Wave */}
-      <div className="relative bg-[#001a3d]  h-[55vh] text-white">
+      <div className="relative bg-[#001a3d]  h-[52lvh] text-white">
+        <Bubbles/>
         <div className="absolute inset-0 flex flex-col ml-5 items-left justify-center">
           <h2 className="text-5xl font-semibold ">Create</h2>
           <h2 className="text-5xl font-semibold mt-1"> Account</h2>
         </div>
-        <svg
-          className="absolute bottom-0 left-0 w-full"
-          viewBox="0 0 360 80"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0,50 C90,0 270,80 360,30 L360,150 L0,80 Z"
-            fill="white"
-          />
-          
-        </svg>
-         {/* Animated Wave */}
-  <div className="wave-wrapper absolute bottom-0 left-0 w-full h-16 overflow-hidden">
-    <div className="wave"></div>
-    <div className="wave wave2"></div>
+          {/* Animated Waves */}
+  <div className="absolute bottom-0 left-0 w-full z-10">
+    <div className="relative w-full h-[150px] overflow-hidden">
+      <div className="wave wave1"></div>
+      <div className="wave wave2"></div>
+      <div className="wave wave3"></div>
+    </div>
   </div>
       </div>
 
