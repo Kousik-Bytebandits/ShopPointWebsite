@@ -81,16 +81,11 @@ let height = window.innerHeight;
   }, []);
 
   return (
-  <div
-    style={{ height: "calc(var(--vh, 1vh) * 50)" }}
-    className="absolute top-0 left-0 w-full z-0 pointer-events-none"
-  >
     <canvas
       ref={canvasRef}
-      className="w-full h-full"
+      className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none"
     />
-  </div>
-);
+  );
 };
 
 export default Bubbles;

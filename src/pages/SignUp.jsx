@@ -20,7 +20,7 @@ const Signup = () => {
   return (
     <div className="min-h-screen w-full bg-white flex flex-col">
       {/* Top Section with Blue Background and Wave */}
-      <div className="relative bg-[#001a3d]   text-white"style={{ height: "calc(var(--vh, 1vh) * 52)" }}>
+      <div className="relative bg-[#001a3d]  h-[52dvh] text-white">
         <Bubbles/>
         <div className="absolute inset-0 flex flex-col ml-5 items-left justify-center">
           <h2 className="text-5xl font-semibold ">Create</h2>
