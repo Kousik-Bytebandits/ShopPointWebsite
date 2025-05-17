@@ -60,7 +60,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen w-full bg-white flex flex-col">
-      <div className="relative bg-[#001a3d] h-[50dvh] text-white overflow-hidden">
+      <div className="relative bg-[#001a3d] h- text-white overflow-hidden "style={{ height: "calc(var(--vh, 1vh) * 50)" }}>
         <Bubbles />
         <div className="absolute inset-0 flex flex-col justify-center -mt-12   ml-5 z-10">
           <h2 className="text-5xl font-semibold">Welcome</h2>

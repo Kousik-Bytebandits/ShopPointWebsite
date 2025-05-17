@@ -8,11 +8,11 @@ const Bubbles = () => {
     const ctx = canvas.getContext("2d");
     const dpr = window.devicePixelRatio || 1;
 
-  canvas.width = canvas.offsetWidth;
-canvas.height = canvas.offsetHeight;
+ canvas.width = window.innerWidth * dpr;
+canvas.height = window.innerHeight * dpr;
+let width = window.innerWidth;
+let height = window.innerHeight;
 
-let width = canvas.width;
-let height = canvas.height;
        
     ctx.scale(dpr, dpr); // Scale drawing context
 
@@ -81,11 +81,16 @@ let height = canvas.height;
   }, []);
 
   return (
+  <div
+    style={{ height: "calc(var(--vh, 1vh) * 50)" }}
+    className="absolute top-0 left-0 w-full z-0 pointer-events-none"
+  >
     <canvas
       ref={canvasRef}
-      className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none"
+      className="w-full h-full"
     />
-  );
+  </div>
+);
 };
 
 export default Bubbles;
