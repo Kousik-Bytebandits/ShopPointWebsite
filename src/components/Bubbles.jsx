@@ -17,7 +17,7 @@ let height = canvas.height;
     ctx.scale(dpr, dpr); // Scale drawing context
 
     const generateBubbleImages = () => {
-      const radius = 8 + Math.random() * 5;
+      const radius = 8 + Math.random() * 2;
       const blur = 15;
       const bubbleCv = document.createElement("canvas");
       const size = (radius * 2) + (blur * 2) + 2;
